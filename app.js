@@ -6,6 +6,9 @@ const forcast = require('./utlis/forcast')
 const request = require('request')
 // Defines paths for Express config
 const app = express()
+const port = process.env.PORT || 5555
+
+
 const pubdir = path.join(__dirname, './public')
 const viewsPath = path.join(__dirname, './templates/views')
 const partialsPath = path.join(__dirname, './templates/partials')
@@ -91,6 +94,6 @@ app.get('*', (req, res) => {
     })
 })
 
-app.listen(5555, () => {
-    console.log('Server is up on port 5555')
+app.listen(port, () => {
+    console.log('Server is up on port ' + port)
 })
